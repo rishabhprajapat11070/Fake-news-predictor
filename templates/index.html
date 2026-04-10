@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruthScan AI | News Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Truth AI</h1>
+            <p>Aesthetic AI for News Authenticity Detection</p>
+        </header>
+
+        <div class="glass-card">
+            <form method="POST" action="/Analyze_News">
+            <div class="input-group">
+                <label>Article Content</label>
+                <textarea placeholder="Paste the news text or headline here..." name="user_input"></textarea>
+            </div>
+            
+            <button type="submit" >Analyze News</button>
+            </form>
+
+            <div class="result-area">
+                <hr>
+                <p name="result">Detection Status:<h4>{{result}}</h4></p>
+                <div class="badge status-waiting">READY TO SCAN</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
